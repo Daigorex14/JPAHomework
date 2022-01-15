@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layout/default_layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="row mt-3">
+            <div class="h1">Edit Product</div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="container">
+                    <form action="#">
+                        <div class="mb-3 row">
+                            <label for="name" class="col-sm-3 col-form-label">Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Product Name">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="price" class="col-sm-3 col-form-label">Price</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="price" id="price" placeholder="999.99">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="unitInStock" class="col-sm-3 col-form-label">Unit in stock</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="unitInStock" id="unitInStock"
+                                    placeholder="100">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="category" class="col-sm-3 col-form-label">Category</label>
+                            <div class="col-sm-9">
+                                <select class="form-select">
+                                    <option>Select Category</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="offset-sm-3 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
