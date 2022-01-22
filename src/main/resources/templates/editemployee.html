@@ -5,42 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Employees</title>
 </head>
 
 <body>
     <div layout:fragment="content">
         <div class="row mt-3">
-            <div class="h1">Edit Product</div>
+            <div class="h1">Edit Employees</div>
         </div>
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="container">
-                    <form action="#">
+                    <form th:action="@{/employee/update}" method="post" th:object="${employee}">
                         <div class="mb-3 row">
                             <label for="name" class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Product Name">
+                                <input type="hidden" name="id" id="id" th:field="*{id}">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Employee Name" th:field="*{name}">
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="price" class="col-sm-3 col-form-label">Price</label>
+                            <label for="price" class="col-sm-3 col-form-label">Salary</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="price" id="price" placeholder="999.99">
+                                <input type="text" class="form-control" name="salary" id="salary" placeholder="999.99" th:field="*{salary}">
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="unitInStock" class="col-sm-3 col-form-label">Unit in stock</label>
+                            <label for="category" class="col-sm-3 col-form-label">Department</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="unitInStock" id="unitInStock"
-                                    placeholder="100">
+                                <select class="form-select" th:field="*{department}" required>
+                                    <!-- bind all category to option -->
+                                    <option th:each="department : ${departments}" th:value="${department.id}" th:text="${department.name}"></option>
+                                </select>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="category" class="col-sm-3 col-form-label">Category</label>
+                            <label for="category" class="col-sm-3 col-form-label">Project</label>
                             <div class="col-sm-9">
-                                <select class="form-select">
-                                    <option>Select Category</option>
+                                <select class="form-select" th:field="*{project}" required>
+                                    <!-- bind all category to option -->
+                                    <option th:each="project : ${projects}" th:value="${project.id}" th:text="${project.name}"></option>
                                 </select>
                             </div>
                         </div>

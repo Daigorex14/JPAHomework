@@ -17,11 +17,23 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public Employee getById(int id){
+        return employeeRepository.getById(id);
+    }
+
     public List<Employee> findByName(String name){
         return employeeRepository.findByNameContaining(name);
     }
 
     public List<Employee> findBySalary(int salary){
         return employeeRepository.findBySalaryLessThanEqual(salary);
+    }
+
+    public Employee save(Employee employee){
+        return employeeRepository.save(employee);
+    }
+
+    public void delete(Employee employee){
+        employeeRepository.delete(employee);
     }
 }
